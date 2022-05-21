@@ -41,21 +41,20 @@ defmodule GenReport do
   end
 
   defp sum_hours_per_month(hours_per_month, name, hours, month) do
-    month_name = get_month_name(month)
     user_months = Map.get(hours_per_month, name)
 
     if user_months != nil do
-      find_month = Map.get(user_months, month_name)
+      find_month = Map.get(user_months, month)
 
       if find_month != nil do
-        updated_user = Map.put(user_months, month_name, find_month + hours)
+        updated_user = Map.put(user_months, month, find_month + hours)
         Map.put(hours_per_month, name, updated_user)
       else
-        updated_user_months = Map.put(user_months, month_name, hours)
+        updated_user_months = Map.put(user_months, month, hours)
         Map.put(hours_per_month, name, updated_user_months)
       end
     else
-      Map.put(hours_per_month, name, Map.put(%{}, month_name, hours))
+      Map.put(hours_per_month, name, Map.put(%{}, month, hours))
     end
   end
 
@@ -77,22 +76,22 @@ defmodule GenReport do
     end
   end
 
-  defp get_month_name(month_number) do
-    case month_number do
-      1 -> "janeiro"
-      2 -> "fevereiro"
-      3 -> "março"
-      4 -> "abril"
-      5 -> "maio"
-      6 -> "junho"
-      7 -> "julho"
-      8 -> "agosto"
-      9 -> "setembro"
-      10 -> "outubro"
-      11 -> "novembro"
-      12 -> "dezembro"
-    end
-  end
+  # defp get_month_name(month_number) do
+  #   case month_number do
+  #     1 -> "janeiro"
+  #     2 -> "fevereiro"
+  #     3 -> "março"
+  #     4 -> "abril"
+  #     5 -> "maio"
+  #     6 -> "junho"
+  #     7 -> "julho"
+  #     8 -> "agosto"
+  #     9 -> "setembro"
+  #     10 -> "outubro"
+  #     11 -> "novembro"
+  #     12 -> "dezembro"
+  #   end
+  # end
 
   defp build_report() do
     %{

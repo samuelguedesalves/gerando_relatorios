@@ -1,14 +1,6 @@
 {
   "excluded": [],
-  "failed": [
-    {
-      "describe": "parse_file/1",
-      "file": "/root/AQUI_SAMUEL/gerando_relatorios/test/parser_test.exs",
-      "line": 7,
-      "module": "Elixir.GenReport.ParserTest",
-      "test": "test parse_file/1 parses the file"
-    }
-  ],
+  "failed": [],
   "invalid": [],
   "passed": [
     {
@@ -24,6 +16,13 @@
       "line": 16,
       "module": "Elixir.GenReportTest",
       "test": "test build/1 When no filename was given, returns an error"
+    },
+    {
+      "describe": "parse_file/1",
+      "file": "/root/AQUI_SAMUEL/gerando_relatorios/test/parser_test.exs",
+      "line": 7,
+      "module": "Elixir.GenReport.ParserTest",
+      "test": "test parse_file/1 parses the file"
     }
   ],
   "skiped": []
